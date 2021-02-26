@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Router from './react-router/Router';
+import Switch from './react-router/Switch';
 import Route from './react-router/Route';
 
 export default function App() {
@@ -8,9 +9,11 @@ export default function App() {
     <>
       <Navigator />
       <Router>
-        <Route path='/' component={Home} />
-        <Route path='/login' component={Login} />
-        <Route path='/about' component={About} />
+        <Switch>
+          <Route path='/' component={Home} />
+          <Route path='/login' component={Login} />
+          <Route path='/about' component={About} />
+        </Switch>
       </Router>
     </>
   );
