@@ -1,12 +1,17 @@
 import React from 'react';
 
+import Router from './react-router/Router';
+import Route from './react-router/Route';
+
 export default function App() {
   return (
     <>
       <Navigator />
-      <Home />
-      <Login />
-      <About />
+      <Router>
+        <Route path='/' component={Home} />
+        <Route path='/login' component={Login} />
+        <Route path='/about' component={About} />
+      </Router>
     </>
   );
 }
@@ -14,9 +19,9 @@ export default function App() {
 function Navigator() {
   return (
     <>
-      <button type="button">/home</button>
-      <button type="button">/login</button>
-      <button type="button">/about</button>
+      <button type="button" onClick={() => location.href = '/'}>/home</button>
+      <button type="button" onClick={() => location.href = '/login'}>/login</button>
+      <button type="button" onClick={() => location.href = '/about'}>/about</button>
     </>
   );
 }
